@@ -1,0 +1,41 @@
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+	all:     unset;
+	display: revert;
+}
+
+/* Preferred box-sizing value. */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags. */
+a, button {
+	cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers). */
+ol, ul, menu {
+	list-style: none;
+}
+
+/* For images to not be able to exceed their container. */
+img {
+	max-width: 100%;
+}
+
+/* Removes spacing between cells in tables. */
+table {
+	border-collapse: collapse;
+}
+
+/* Revert the `white-space` property for textarea elements on Safari. */
+textarea {
+	white-space: revert;
+}
+
+/* Reset default text opacityn of input placeholder. */
+::placeholder {
+	all: unset;
+}
