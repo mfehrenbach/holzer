@@ -1,2 +1,36 @@
 ---
 ---
+
+:root {
+	--typography--size: 1.6rem;
+
+	-moz-osx-font-smoothing:  grayscale;
+	-webkit-font-smoothing:   antialiased;
+	-webkit-text-size-adjust: none;
+	font-feature-settings:    'liga', 'kern';
+	font-kerning:             normal;
+	font-size:                62.5%; // Our base size is 10/16, so that 1rem = 10px. Classic, easy maths.
+	text-rendering:           optimizeLegibility;
+
+	@media (min-width: 768px) {
+		--typography--size: 2rem;
+	}
+}
+
+
+
+body {
+	display:         flex;
+	font-family:     TimesNewRoman, Times New Roman, Times, serif;
+	font-size:       var(--typography--size);
+	font-style:      italic;
+	font-weight:     bold;
+	justify-content: center;
+	padding:         1em 2em;
+
+	> ul {
+		align-items:    start;
+		display:        flex;
+		flex-direction: column;
+	}
+}
