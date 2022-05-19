@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"style.scss"
+	],
+	"sourcesContent": [
+		":root {\n\t--typography--size: 1.6rem;\n\n\t-moz-osx-font-smoothing:  grayscale;\n\t-webkit-font-smoothing:   antialiased;\n\t-webkit-text-size-adjust: none;\n\tfont-feature-settings:    'liga', 'kern';\n\tfont-kerning:             normal;\n\tfont-size:                62.5%; // Our base size is 10/16, so that 1rem = 10px. Classic, easy maths.\n\ttext-rendering:           optimizeLegibility;\n\n\t@media (min-width: 768px) {\n\t\t--typography--size: 2rem;\n\t}\n}\n\n\n\nbody {\n\tbackground-color: #eee;\n\tcolor:            #333;\n\tdisplay:          flex;\n\tfont-family:      TimesNewRoman, Times New Roman, Times, serif;\n\tfont-size:        var(--typography--size);\n\tfont-style:       italic;\n\tfont-weight:      bold;\n\tjustify-content:  center;\n\tpadding:          1em 2em;\n\n\t> ul {\n\t\talign-items:    start;\n\t\tdisplay:        flex;\n\t\tflex-direction: column;\n\t}\n}\n"
+	],
+	"names": [],
+	"mappings": "CAAC,AAAD,IAAK,CAAC,EACL,kBAAkB,CAAA,OAAC,EAEnB,uBAAuB,EAAG,SAAS,EACnC,sBAAsB,EAAI,WAAW,EACrC,wBAAwB,EAAE,IAAI,EAC9B,qBAAqB,EAAK,cAAc,EACxC,YAAY,EAAc,MAAM,EAChC,SAAS,EAAiB,KAAK,EAC/B,cAAc,EAAY,kBAAkB,GAK5C;;AAHA,MAAM,mBAXP,IAAC,AAAD,IAAK,CAAC,EAYJ,kBAAkB,CAAA,KAAC,GAEpB,EAAA;;AAID,AAAA,IAAI,CAAC,EACJ,gBAAgB,EAAE,IAAI,EACtB,KAAK,EAAa,IAAI,EACtB,OAAO,EAAW,IAAI,EACtB,WAAW,EAAO,4CAA4C,EAC9D,SAAS,EAAS,uBAAuB,EACzC,UAAU,EAAQ,MAAM,EACxB,WAAW,EAAO,IAAI,EACtB,eAAe,EAAG,MAAM,EACxB,OAAO,EAAW,OAAO,GAOzB;;AAhBD,AAWC,IAXG,GAWD,EAAE,CAAC,EACJ,WAAW,EAAK,KAAK,EACrB,OAAO,EAAS,IAAI,EACpB,cAAc,EAAE,MAAM,GACtB"
+}
