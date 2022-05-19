@@ -1,4 +1,3 @@
-baseurl: /holzer
 livereload: true
 sass:
   sass_dir: assets
