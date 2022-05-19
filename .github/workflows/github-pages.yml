@@ -10,14 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
-    - uses: actions/cache@v2
+      uses: actions/checkout@v3
+    - name: Setup Beautifier
+      run:  npm -g install js-beautify@1.14.0
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
       with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
-    - uses: helaili/jekyll-action@v2
+        ruby-version: 3.1.0
+    - name: Install and Build Jekyll
+      uses: limjh16/jekyll-action-ts@v2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        target_branch: ${{ env.destination }}
+        enable_cache: true
+        custom_opts: --destination ${{ env.destination }}
+      run:  html-beautify --indent-inner-html --extra_liners --no-preserve-newlines --indent-with-tabs --replace "${{ env.destination }}/**/*.html"
+    - name: Beautify CSS
+      run:  css-beautify --space_around_combinator --indent-with-tabs --replace "${{ env.destination }}/**/*.css"
+    - name: Beautify JS
+      run:  js-beautify --indent-with-tabs --replace "${{ env.destination }}/**/*.js"
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token:    ${{ secrets.GITHUB_TOKEN }}
+        publish_dir:    ./${{ env.destination }}
+        publish_branch: ${{ env.destination }}
+        commit_message: ${{ github.event.head_commit.message }}
