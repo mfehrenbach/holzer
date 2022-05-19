@@ -22,6 +22,7 @@ jobs:
       with:
         enable_cache: true
         custom_opts: --destination ${{ env.destination }}
+    - name: Beautify HTML
       run:  html-beautify --indent-inner-html --extra_liners --no-preserve-newlines --indent-with-tabs --replace "${{ env.destination }}/**/*.html"
     - name: Beautify CSS
       run:  css-beautify --space_around_combinator --indent-with-tabs --replace "${{ env.destination }}/**/*.css"
