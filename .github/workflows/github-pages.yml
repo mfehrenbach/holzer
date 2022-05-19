@@ -4,6 +4,7 @@ on:
     branches: [main]
 env:
   destination: public
+  default: _site
 jobs:
   build-deploy:
     name:    Build/Deploy
@@ -21,17 +22,16 @@ jobs:
       uses: limjh16/jekyll-action-ts@v2
       with:
         enable_cache: true
-        custom_opts: --destination ${{ env.destination }}
     - name: Beautify HTML
-      run:  html-beautify --indent-inner-html --extra_liners --no-preserve-newlines --indent-with-tabs --replace "${{ env.destination }}/**/*.html"
+      run:  html-beautify --indent-inner-html --extra_liners --no-preserve-newlines --indent-with-tabs --replace "${{ env.default }}/**/*.html"
     - name: Beautify CSS
-      run:  css-beautify --space_around_combinator --indent-with-tabs --replace "${{ env.destination }}/**/*.css"
+      run:  css-beautify --space_around_combinator --indent-with-tabs --replace "${{ env.default }}/**/*.css"
     - name: Beautify JS
-      run:  js-beautify --indent-with-tabs --replace "${{ env.destination }}/**/*.js"
+      run:  js-beautify --indent-with-tabs --replace "${{ env.default }}/**/*.js"
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token:    ${{ secrets.GITHUB_TOKEN }}
-        publish_dir:    ./${{ env.destination }}
+        publish_dir:    ./${{ env.default }}
         publish_branch: ${{ env.destination }}
         commit_message: ${{ github.event.head_commit.message }}
