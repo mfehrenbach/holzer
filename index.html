@@ -4,6 +4,9 @@ layout: default
 
 <ul>
 	{% for truism in site.data.truisms %}
-		<li>{{ truism.text }}</li>
+		{% assign id = truism.text | replace: " ", " " %}
+		{% assign id = id | truncatewords: 3, ""  %}
+		{% assign id = id | replace: "'", ""  | replace: " ", "-" | downcase  %}
+		<li id="{{ id }}">{{ truism.text }}</li>
 	{% endfor %}
 </ul>
