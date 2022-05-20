@@ -3,17 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<meta	content="initial-scale=1, width=device-width, viewport-fit=cover" name="viewport">
-		<title>
-			{% if page.title %}
-				{{- page.title -}}
-				{% assign hierarchy = '../' %}
-			{% else %}
-				{{- site.title -}}
-			{% endif %}
-		</title>
-		<link href="{{ hierarchy }}{{ '/assets/favicon.png' | relative_path }}" rel="icon">
-		<link href="{{ hierarchy }}{{ '/assets/reset.css' | relative_path }}" rel="stylesheet">
-		<link href="{{ hierarchy }}{{ '/assets/style.css' | relative_path }}" rel="stylesheet">
+		<title>{{- site.title -}}</title>
+		<link href="{{ '/assets/favicon.png' | relative_path }}" rel="icon">
+		<link href="{{ '/assets/reset.css' | relative_path }}" rel="stylesheet">
+		<link href="{{ '/assets/style.css' | relative_path }}" rel="stylesheet">
 	</head>
 	<body>
 		{{ content }}
