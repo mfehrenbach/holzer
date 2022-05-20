@@ -3,3 +3,10 @@ sass:
   sass_dir: assets
 theme: null
 title: WORDS TEND TO BE INADEQUATE
+
+page_gen-dirs: true
+page_gen:
+  - data: truisms
+    dir: ''
+    name: text
+    template: truism
