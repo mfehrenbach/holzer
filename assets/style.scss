@@ -2,7 +2,7 @@
 ---
 
 :root {
-	--typography--size: 1.6rem;
+	--typography--size: 3.2rem;
 
 	-moz-osx-font-smoothing:  grayscale;
 	-webkit-font-smoothing:   antialiased;
@@ -13,7 +13,7 @@
 	text-rendering:           optimizeLegibility;
 
 	@media (min-width: 768px) {
-		--typography--size: 2rem;
+		--typography--size: 4rem;
 	}
 }
 
@@ -34,7 +34,8 @@ body {
 	font-style:       italic;
 	font-weight:      bold;
 	justify-content:  center;
-	padding:          1em 2em;
+	line-height:      1;
+	padding:          1em;
 
 	> ul {
 		align-items:     start;
@@ -43,7 +44,9 @@ body {
 		justify-content: center;
 
 		> li {
-			display: none;
+			display:    none;
+			max-width:  40ch;
+			text-align: center;
 
 			&.current {
 				display: block;
