@@ -1,5 +1,5 @@
 :root {
-	--typography--size: 1.6rem;
+	--typography--size: 3.2rem;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: none;
@@ -11,8 +11,14 @@
 
 @media (min-width: 768px) {
 	:root {
-		--typography--size: 2rem;
+		--typography--size: 4rem;
 	}
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
 }
 
 body {
@@ -24,13 +30,25 @@ body {
 	font-style: italic;
 	font-weight: bold;
 	justify-content: center;
-	padding: 1em 2em;
+	line-height: 1;
+	padding: 1em;
 }
 
 body > ul {
 	align-items: start;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+}
+
+body > ul > li {
+	display: none;
+	max-width: 40ch;
+	text-align: center;
+}
+
+body > ul > li.current {
+	display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
