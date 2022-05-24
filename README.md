@@ -7,7 +7,7 @@
 - [x] Go back to single page list
 - [x] Add `id`
 - [x] Random one via JS
-- [ ] Update the page title
+- [x] Update the page title
 - [ ] Balance the text
 - [ ] Add/match/cycle `id` in URL
 - [ ] Add random button/transitions
