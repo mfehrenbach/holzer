@@ -3,6 +3,7 @@ const randomTruism = () => {
 	const random = Math.floor((Math.random() * truisms.length))
 
 	truisms[random].classList.add('current')
+	document.title = truisms[random].innerHTML.replaceAll('&nbsp;', ' ')
 }
 
 
