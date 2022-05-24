@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<ul>
+<ul id="truisms">
 	{% for truism in site.data.truisms %}
 		{% assign id = truism.text | replace: " ", " " %}
 		{% assign id = id | truncatewords: 4, ""  %}
