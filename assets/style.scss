@@ -19,6 +19,12 @@
 
 
 
+html,
+body {
+	height: 100%;
+	width:  100%;
+}
+
 body {
 	background-color: #eee;
 	color:            #333;
@@ -31,8 +37,17 @@ body {
 	padding:          1em 2em;
 
 	> ul {
-		align-items:    start;
-		display:        flex;
-		flex-direction: column;
+		align-items:     start;
+		display:         flex;
+		flex-direction:  column;
+		justify-content: center;
+
+		> li {
+			display: none;
+
+			&.current {
+				display: block;
+			}
+		}
 	}
 }
