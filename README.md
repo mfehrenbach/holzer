@@ -8,6 +8,7 @@
 - [x] Add `id`
 - [x] Random one via JS
 - [x] Update the page title
+- [ ] Size mobile to longest words (*interconnected*, *interpretations*, *revolutionaries*, *disorganization*)
 - [ ] Balance the text
 - [ ] Add/match/cycle `id` in URL
 - [ ] Add random button/transitions
